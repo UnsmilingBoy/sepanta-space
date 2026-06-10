@@ -13,7 +13,7 @@ import { MenuIcon, Paperclip } from "lucide-react"
 export default function ResumeHeader() {
   return (
     <header>
-      <div className="flex items-center justify-between border bg-gray-50/95 px-4 py-2 dark:bg-zinc-900/95">
+      <div className="flex items-center justify-between border bg-card px-4 py-2">
         <Avatar className="h-8 w-8 border border-border">
           <AvatarImage src="/profile.jpg" alt="Your Name" />
           <AvatarFallback>SS</AvatarFallback>

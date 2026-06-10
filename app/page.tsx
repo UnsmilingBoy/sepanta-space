@@ -13,6 +13,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { SkillsAccordion } from "@/components/ui/skills-collapsible"
 
 export default function Page() {
   const typedName = useTypingAnimation("Sepanta Shafizadeh", 80, 100)
@@ -34,12 +35,13 @@ export default function Page() {
                 <span className="animate-caret-blink">_</span>
               </span>
               <p>
-                Sub-headline: A 1-2 sentence value proposition explaining what
-                you excel at and what drives you.
+                Computer Engineering graduate focused on modern web and mobile
+                development. Leveraging Next.js and Flutter to build
+                high-performance digital products from the ground up.
               </p>
               <div className="flex flex-row gap-3">
                 <Button variant={"default"}>Contact Me</Button>
-                <Button variant={"outline"}>View My Work</Button>
+                <Button variant={"outline"}>My Work</Button>
               </div>
             </div>
           </FadeIn>
@@ -67,8 +69,12 @@ export default function Page() {
         </FadeIn>
       </div>
       <FadeIn direction="up" delay={1.8}>
-        <Separator />
+        <Separator className="my-4" />
       </FadeIn>
+
+      <section>
+        <SkillsAccordion />
+      </section>
     </div>
   )
 }
