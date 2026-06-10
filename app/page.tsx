@@ -18,8 +18,8 @@ export default function Page() {
   const typedName = useTypingAnimation("Sepanta Shafizadeh", 80, 100)
 
   return (
-    <div className="m-auto flex min-h-svh w-full max-w-3xl min-w-0 flex-col gap-4 px-6 pr-6 pl-6 text-sm leading-loose">
-      <div className="sticky top-0 z-10 pt-6">
+    <div className="m-auto flex min-h-svh w-full max-w-3xl min-w-0 flex-col gap-4 px-4 pr-4 pl-4 text-sm leading-loose sm:px-6 sm:pr-6 sm:pl-6">
+      <div className="sticky top-0 z-10 pt-4 sm:pt-6">
         <FadeIn direction="down">
           <ResumeHeader />
         </FadeIn>
