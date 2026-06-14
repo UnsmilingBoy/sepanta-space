@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 export function useTypingAnimation(text: string, speed = 30, delay = 0) {
-  const [displayedText, setDisplayedText] = useState("")
+  const [displayedText, setDisplayedText] = useState(text[0] || "")
 
   useEffect(() => {
     let index = 0
