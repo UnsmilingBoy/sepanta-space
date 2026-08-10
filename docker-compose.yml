@@ -17,19 +17,48 @@ services:
       - internal
 
   app:
-    build: .
+    build:
+      context: .
     restart: always
     env_file: .env
     depends_on:
       postgres:
         condition: service_healthy
-    ports:
-      - "3000:3000"
     networks:
       - internal
+
+  caddy:
+    image: caddy:2-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+    networks:
+      - internal
+
+  migrate:
+    build:
+      context: .
+      target: builder
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - internal
+    command: ["npx", "payload", "migrate"]
+    profiles: ["tools"]
 
 networks:
   internal:
 
 volumes:
   pgdata:
+  caddy_data:
+  caddy_config:
