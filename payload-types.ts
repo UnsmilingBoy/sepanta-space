@@ -227,6 +227,7 @@ export interface Certification {
   id: number;
   name: string;
   year: string;
+  link?: string | null;
   order?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -492,6 +493,7 @@ export interface EducationSelect<T extends boolean = true> {
 export interface CertificationsSelect<T extends boolean = true> {
   name?: T;
   year?: T;
+  link?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;

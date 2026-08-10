@@ -7,6 +7,7 @@ export const Certifications: CollectionConfig = {
   fields: [
     { name: "name", type: "text", required: true },
     { name: "year", type: "text", required: true },
+    { name: "link", type: "text" },
     {
       name: "order",
       type: "number",
