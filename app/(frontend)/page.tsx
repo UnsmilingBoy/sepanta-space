@@ -8,6 +8,7 @@ import { EducationSection } from "@/components/resume/education-section"
 import { SkillsSection } from "@/components/resume/skills-section"
 import { ProjectsSection } from "@/components/resume/projects-section"
 import { CertificationsSection } from "@/components/resume/certifications-section"
+import Footer from "@/components/site-footer"
 
 export const dynamic = "force-dynamic"
 
@@ -33,10 +34,10 @@ export default async function Page() {
   const skillGroups = groupSkillsByCategory(skillsRes.docs)
 
   return (
-    <div className="m-auto flex min-h-svh w-full max-w-5xl min-w-0 flex-col gap-4 px-4 pr-4 pl-4 text-sm leading-loose sm:px-6 sm:pr-6 sm:pl-6">
-      <div className="sticky top-0 z-10 pt-4 sm:pt-6">
+    <div className="m-auto flex min-h-svh w-full max-w-7xl min-w-0 flex-col gap-4 px-4 pr-4 pl-4 text-sm leading-loose sm:px-6 sm:pr-6 sm:pl-6">
+      <div className="top-0 z-10 pt-4 sm:pt-6">
         <FadeIn direction="down">
-          <ResumeHeader />
+          <ResumeHeader sitesetting={settings} />
         </FadeIn>
       </div>
 
@@ -50,6 +51,7 @@ export default async function Page() {
       <SkillsSection groups={skillGroups} />
       <ProjectsSection projects={projectsRes.docs} />
       <CertificationsSection certifications={certsRes.docs} />
+      <Footer sitesetting={settings} />
     </div>
   )
 }

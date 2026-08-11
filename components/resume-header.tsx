@@ -8,9 +8,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { SiteSetting } from "@/payload-types"
 import { MenuIcon, Paperclip } from "lucide-react"
 
-export default function ResumeHeader() {
+export default function ResumeHeader({
+  sitesetting,
+}: {
+  sitesetting: SiteSetting
+}) {
   return (
     <header>
       <div className="flex items-center justify-between border bg-card px-4 py-2">
